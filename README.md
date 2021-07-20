@@ -2,13 +2,19 @@
 Program which reads barcodes that are in the form of screenshot's taken from the web.
 --Later in the program, I employed a simple one-dimensional clustering algorithm in order to more effectively and accurately read and interpret the stripes of the barcode.
 
+7/21/2021: I have gotten the right side of the middle guard to being read with decently high accuracy, some barcodes are capable
+of completely making my system go haywire. I am not sure if they are poorly produced barcodes or what not, but most of them do indeed work with my program.
 
 7/20/2021: I have gotten the program to read most barcodes on the left-hand side for right now, I next need to get my program to work for the part of the barcode on the right-hand side of the middle guard.
 
 Below is an example of the output of the program, with the barcode being read and the output written from the program.
-<img width="362" alt="barcode_being_read" src="https://user-images.githubusercontent.com/37377528/126339277-4fced5fd-0ecf-4663-83b1-0898a6a4c9f9.png">
+<img width="769" alt="barcode_being_read" src="https://user-images.githubusercontent.com/37377528/126395619-21a3459d-def3-4412-9878-672718a9b438.png">
 
-<img width="504" alt="barcode_reader_output" src="https://user-images.githubusercontent.com/37377528/126339305-586a34a1-dd59-4cea-9059-976b78f44ab7.png">
+
+<img width="850" alt="barcode_reader_output" src="https://user-images.githubusercontent.com/37377528/126395651-d79d870b-fc86-44c4-a070-103db6c6c1cf.png">
+
 
 This chart is kind of complicated to explain but all thats needed to be known about it is if the four peaks on it are relatively sharp and concentrated, the better my program will run in its current state.
-<img width="599" alt="plot" src="https://user-images.githubusercontent.com/37377528/126339331-192a0553-c1eb-4ec6-b87c-8dee667526dc.png">
+<img width="627" alt="plot_barcode" src="https://user-images.githubusercontent.com/37377528/126395676-ac77bb12-3432-4488-bb96-ab351a4455c9.png">
+
+
