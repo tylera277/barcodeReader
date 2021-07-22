@@ -5,8 +5,6 @@ Program which reads barcodes that are in the form of screenshot's taken from the
 7/21/2021: I have gotten the right side of the middle guard to being read with decently high accuracy, some barcodes are capable
 of completely making my system go haywire. I am not sure if they are poorly produced barcodes or what not, but most of them do indeed work with my program.
 
-7/20/2021: I have gotten the program to read most barcodes on the left-hand side for right now, I next need to get my program to work for the part of the barcode on the right-hand side of the middle guard.
-
 Below is an example of the output of the program, with the barcode being read and the output written from the program.
 <img width="769" alt="barcode_being_read" src="https://user-images.githubusercontent.com/37377528/126395619-21a3459d-def3-4412-9878-672718a9b438.png">
 
