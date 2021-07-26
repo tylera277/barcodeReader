@@ -19,7 +19,7 @@ class PositionOfBlackBars:
         i = 0
         pos = []
         while i < self.pic.shape[1]:
-            if (self.pic[150, i, 2]) <= 175:
+            if (self.pic[250, i, 2]) <= 175:
 
                 pos.append(i)
             i += 1
@@ -130,8 +130,8 @@ class PositionOfBlackBars:
 
     def clustering(self, change, numOfClusters, moduleWidth):
         """
-        An attempt at implementing a shitty k-means clustering
-        algorithm with the ultimate aim of assigning the data into
+        An attempt at implementing a shitty clustering
+        "algorithm" with the ultimate aim of assigning the data into
         four clusters and
         assigning those in each cluster a multiple of the module width,
         hopefully making the number identifier of the patterns list
@@ -198,3 +198,23 @@ class PositionOfBlackBars:
         print('new change:', change)
 
         return change
+
+    def parityDetector(self, list, firstList):
+        """
+
+        """
+        newList = []
+        for i in range(0, 1, 1):
+
+            # +this if checks the parity of the list, if its even, that means the
+            # list is flipped upside down.
+            if (list[i+1] + list[i+3]) % 2 == 0:
+                print('flipped')
+                for j in range(len(list)-1, -1, -1):
+                    newList.append(list[j])
+
+            else:
+                print('Not flipped')
+                newList.append('NONE')
+        return newList
+
