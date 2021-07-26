@@ -6,11 +6,12 @@ class NumberIdentifier:
 
     def identifyNumbers(self):
 
-        # this for loop is to just get rid of the first three
+        # +This for loop is to just get rid of the first three bars that
+        # represent the start and end guards
         newPatternList = []
         for j in range(3, len(self.patternList)):
             newPatternList.append(self.patternList[j])
-        print('New pattern:', newPatternList)
+        #print('New pattern:', newPatternList)
         numberList = []
         endMiddle = 0
 
@@ -92,7 +93,5 @@ class NumberIdentifier:
                 numberList.append('?')
             #if len(numberList) == 7:
             #    break
-        return numberList, endMiddle
-
-
+        return numberList, endMiddle, newPatternList
 
