@@ -8,7 +8,7 @@ from numberIdentifier import NumberIdentifier
 from seconddHalfNumberIdentifier import secondHalfNumberIdentifier
 from randomStuff import plotter
 
-pic = imageio.imread('barcode_8.png')
+pic = imageio.imread('flipped_barcode4.png')
 
 print('Height:{}'.format(pic.shape[0]))
 print('Width:{}'.format(pic.shape[1]))
@@ -42,7 +42,7 @@ moduleWidth = moduleWidth1 - 1
 print('Module width?:', moduleWidth)
 
 # My attempt at analyzing the 'change' list based on 4 clusters
-change1= a.clustering(change, 4, moduleWidth)
+change1 = a.clustering(change, 4, moduleWidth)
 
 # + A list which is the number of modules in each band of black
 # and white, which will be central for this program in identifying
@@ -53,7 +53,8 @@ print('Pattern:', pattern)
 # +This function identifies the numbers inside the pattern for left
 # and up to the middle guard.
 # The endOfMiddle variable is useful for doing the numbers on the right side of the guard.
-numbersInPattern, endOfMiddle = NumberIdentifier(pattern).identifyNumbers()
+numbersInPattern, endOfMiddle, newPattern = NumberIdentifier(pattern).identifyNumbers()
+print('New pattern:', newPattern)
 #print(numbersInPattern)
 
 # +This just breaks away everything from the left up to the end of
@@ -66,3 +67,20 @@ print('2nd half pattern:', secondHalf)
 # the numbers.
 secondHalfPattern = secondHalfNumberIdentifier().identify2ndHalfNumbers(secondHalf)
 print(numbersInPattern+secondHalfPattern)
+
+# This has the goal of checking whether the barcode was scanned upside down,
+# in which case I flip the list so it can be read by my function from
+# earlier.
+upsideDownCheck = a.parityDetector(newPattern, numbersInPattern)
+newList, a, b = NumberIdentifier(upsideDownCheck).identifyNumbers()
+print('new list:', upsideDownCheck)
+#if len(newList) < 3:
+#    pass
+#else:
+#    print(newList)
+
+# Under here needs to be worked on.
+secondHalf1 = secondHalfNumberIdentifier().make2ndHalfPattern(upsideDownCheck, a)
+print(secondHalf1)
+secondHalfList = secondHalfNumberIdentifier().identify2ndHalfNumbers(secondHalf1)
+print(newList+secondHalfList)
